@@ -117,8 +117,7 @@ jobs:
         env:
           ANDROID_NDK_HOME: ""
         run: |
-          bazelisk build  --cpu=x86_64_windows //src/server:mozc_server //src/gui/tool:mozc_tool
-
+          bazelisk build  //server:mozc_server --config=windows --cpu=x64_windows
       - name: upload Mozc64_x64.msi
         uses: actions/upload-artifact@v4
         with:
